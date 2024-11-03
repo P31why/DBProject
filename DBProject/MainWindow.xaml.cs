@@ -36,5 +36,11 @@ namespace DBProject
         {
 
         }
+
+        private void Button_Click_Settings(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow window = new SettingsWindow();
+            window.Show();
+        }
     }
 }

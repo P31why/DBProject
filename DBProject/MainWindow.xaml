@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="506" ResizeMode="NoResize">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="442,10,0,0" VerticalAlignment="Top" Height="38" Width="38"/>
-        <StackPanel Margin="176,138,176,138">
+        <Button Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="442,10,0,0" VerticalAlignment="Top" Height="54" Width="54" Click="Button_Click_Settings">
+            <Button.Background>
+                <ImageBrush TileMode="Tile" ImageSource="/imageS.png"/>
+            </Button.Background>
+        </Button>
+        <StackPanel Margin="176,138,176,95">
             <Button Content="Работники" Height="32" Click="Button_Click"/>
             <Button Content="Должности" Height="32" Margin="0,22,0,0" Click="Button_Click_1"/>
             <Button Content="Удаленные работники" Height="32" Padding="1,1,1,1" Margin="0,22,0,0" Click="Button_Click_2"/>
