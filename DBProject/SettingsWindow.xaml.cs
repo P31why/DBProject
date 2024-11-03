@@ -25,7 +25,11 @@ namespace DBProject
         public SettingsWindow()
         {
             InitializeComponent();
-            UpdateConnectionString += MainWindow.
+            
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateConnectionString?.Invoke(textBoxConnection.Text);
         }
     }
 }

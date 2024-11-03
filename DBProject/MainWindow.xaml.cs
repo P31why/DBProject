@@ -40,11 +40,12 @@ namespace DBProject
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             SettingsWindow window = new SettingsWindow();
+            window.UpdateConnectionString += UpdateConnection;
             window.Show();
         }
-        public void Updateconnection(string text)
+        public void UpdateConnection(string text)
         {
-
+            connectionString = text;
         }
     }
 }

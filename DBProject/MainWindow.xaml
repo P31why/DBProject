@@ -13,7 +13,7 @@
             </Button.Background>
         </Button>
         <StackPanel Margin="176,138,176,95">
-            <Button Content="Работники" Height="32" Click="Button_Click"/>
+            <Button x:Name="button" Content="Работники" Height="32" Click="Button_Click"/>
             <Button Content="Должности" Height="32" Margin="0,22,0,0" Click="Button_Click_1"/>
             <Button Content="Удаленные работники" Height="32" Padding="1,1,1,1" Margin="0,22,0,0" Click="Button_Click_2"/>
         </StackPanel>

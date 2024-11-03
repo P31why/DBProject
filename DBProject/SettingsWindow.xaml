@@ -8,7 +8,8 @@
         Title="SettingsWindow" Height="450" Width="365" ResizeMode="NoResize">
     <Grid>
         <Label Content="Строка подключения" HorizontalAlignment="Left" Margin="86,73,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ConnectionStringText" HorizontalAlignment="Left" Margin="90,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="214"/>
+        <TextBox x:Name="textBoxConnection" HorizontalAlignment="Left" Margin="90,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="214"/>
+        <Button Content="сохранить" HorizontalAlignment="Left" Margin="126,367,0,0" VerticalAlignment="Top" Width="142" Height="27" Click="Button_Click"/>
 
     </Grid>
 </Window>
