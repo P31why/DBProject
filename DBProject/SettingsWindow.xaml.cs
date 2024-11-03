@@ -19,10 +19,13 @@ namespace DBProject
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public delegate void UpdateConnectionString(string text);
+        public delegate void SettingsUpdate(string text);
+        public event SettingsUpdate UpdateConnectionString;
+        
         public SettingsWindow()
         {
             InitializeComponent();
+            UpdateConnectionString += MainWindow.
         }
     }
 }

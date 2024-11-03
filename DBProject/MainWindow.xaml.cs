@@ -42,5 +42,9 @@ namespace DBProject
             SettingsWindow window = new SettingsWindow();
             window.Show();
         }
+        public void Updateconnection(string text)
+        {
+
+        }
     }
 }
