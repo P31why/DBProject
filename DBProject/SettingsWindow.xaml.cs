@@ -17,15 +17,20 @@ namespace DBProject
     /// <summary>
     /// Логика взаимодействия для SettingsWindow.xaml
     /// </summary>
+    public delegate void SettingsUpdate(string text);
     public partial class SettingsWindow : Window
     {
-        public delegate void SettingsUpdate(string text);
+        
         public event SettingsUpdate UpdateConnectionString;
         
         public SettingsWindow()
         {
             InitializeComponent();
             
+        }
+        public void AcceptConnection(string text)
+        {
+            textBoxConnection.Text = text;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
