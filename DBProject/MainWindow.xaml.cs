@@ -54,6 +54,7 @@ namespace DBProject
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+            statusBar.Content = "Подключение ...";
             TestConnection();
         }
     }
