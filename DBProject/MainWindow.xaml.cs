@@ -47,8 +47,15 @@ namespace DBProject
         {
             using (SqlConnection connetion = new SqlConnection(connectionString))
             {
-                await connetion.OpenAsync();
-                statusBar.Content = "Подключение установлено";
+                try
+                {
+                    await connetion.OpenAsync();
+                    statusBar.Content = "Подключение установлено";
+                }
+                catch (Exception ex)
+                {
+                    statusBar.Content = "Подключение отсутствует";
+                }
             }
         }
 
