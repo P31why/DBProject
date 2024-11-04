@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Windows;
+using Microsoft.Data.SqlClient;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -16,36 +17,39 @@ namespace DBProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString = "";
+        event SettingsUpdate SendCurrrentConnection;
+        string connectionString = "Server=DESKTOP-CND4IL3;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_Settings(object sender, RoutedEventArgs e)
-        {
-            SettingsWindow window = new SettingsWindow();
-            window.UpdateConnectionString += UpdateConnection;
-            window.Show();
+            
         }
         public void UpdateConnection(string text)
         {
             connectionString = text;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow window = new SettingsWindow();
+            window.UpdateConnectionString += UpdateConnection;
+            SendCurrrentConnection += window.AcceptConnection;
+            SendCurrrentConnection?.Invoke(connectionString);
+            window.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            statusBar.Content = "Подключение ...";
+            TestConnection();
+        }
+        private async void TestConnection()
+        {
+            using (SqlConnection connetion = new SqlConnection(connectionString))
+            {
+                await connetion.OpenAsync();
+                statusBar.Content = "Подключение установлено";
+            }
         }
     }
 }
