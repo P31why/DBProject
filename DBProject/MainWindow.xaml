@@ -14,7 +14,7 @@
                 <MenuItem Header="Должноти" ></MenuItem>
                 <Separator />
             </MenuItem>
-            <MenuItem Header="Сортировка" ></MenuItem>
+            <MenuItem Header="Подключиться" Click="MenuItem_Click_1" ></MenuItem>
             <MenuItem Header="Настройки" Click="MenuItem_Click" ></MenuItem>
         </Menu>
         <Label x:Name="statusBar" Content="Label" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.632,0.579"/>
