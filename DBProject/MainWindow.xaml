@@ -9,6 +9,17 @@
         Loaded="Window_Loaded">
     <Grid>
         <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Таблицы">
+                <MenuItem Header="Работники" >
+                    <MenuItem Header="Отобразить работников" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="Отобразить работников с ID" Click="MenuItem_Click_5"/>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Должноти" >
+                    <MenuItem Header="Отобразить Должности" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="Отобразить Должности с ID" Click="MenuItem_Click_7"/>
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="Изменить">
                 <MenuItem Header="Добавление">
                     <MenuItem Header="Работника" Click="MenuItem_Click_2" />
@@ -20,17 +31,7 @@
                     <MenuItem Header="Должности" Click="MenuItem_Click_3" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Таблицы">
-                <MenuItem Header="Работники" >
-                    <MenuItem Header="Отобразить работников" Click="MenuItem_Click_4"/>
-                    <MenuItem Header="Отобразить работников с ID" Click="MenuItem_Click_5"/>
-                </MenuItem>
-                <MenuItem Header="Должноти" >
-                    <MenuItem Header="Отобразить Должности" Click="MenuItem_Click_6"/>
-                    <MenuItem Header="Отобразить Должности с ID" Click="MenuItem_Click_7"/>
-                </MenuItem>
-                <Separator />
-            </MenuItem>
+            
             <MenuItem Header="Подключиться" Click="MenuItem_Click_1" ></MenuItem>
             <MenuItem Header="Настройки" Click="MenuItem_Click" ></MenuItem>
             
