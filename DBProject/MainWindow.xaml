@@ -29,7 +29,7 @@
                 <MenuItem Header="Отобразить работников" Click="MenuItem_Click_4"/>
                 <MenuItem Header="Отобразить работников с ID" Click="MenuItem_Click_5"/>
                 <MenuItem Header="Отобрацть Должности" Click="MenuItem_Click_6"/>
-                <MenuItem Header="Отобрацть Должности" Click="MenuItem_Click_7">
+                <MenuItem Header="Отобрацть Должности" Click="MenuItem_Click_7"/>
             </MenuItem>
             <MenuItem Header="Подключиться" Click="MenuItem_Click_1" ></MenuItem>
             <MenuItem Header="Настройки" Click="MenuItem_Click" ></MenuItem>
