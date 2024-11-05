@@ -40,7 +40,7 @@ namespace DBProject
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connectionStr);
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
-                    jobList.ItemsSource = ds.Tables[0].Rows;
+                    jobList.ItemsSource = ds.Tables[0].DefaultView;
                 }
                 catch(Exception ex)
                 {
@@ -48,15 +48,26 @@ namespace DBProject
                 }
             }
         }
-        private void AddNewEmployee(object sender, RoutedEventArgs e)
+        private void AddNewEmployee_Click(object sender, RoutedEventArgs e)
         {
-
-            string sqlQueryAddEmpl = $"EXEC AddNewEmploye ";
+            if (jobList.SelectedValue == null)
+            {
+                MessageBox.Show("Выберите должность сотруднику");
+                return;
+            }
+            string sqlQueryAddEmpl = "AddNewEmploye";
+            int job_title_id = (int)jobList.SelectedValue;
             using (SqlConnection connection=new SqlConnection(connectionStr))
             {
                 try
                 {
+                    connection.Open();
                     SqlCommand addEmpl = new SqlCommand(sqlQueryAddEmpl, connection);
+                    addEmpl.CommandType = CommandType.StoredProcedure;
+                    addEmpl.Parameters.AddWithValue("@emplSurname", FamText.Text);
+                    addEmpl.Parameters.AddWithValue("@emplName", NameText.Text);
+                    addEmpl.Parameters.AddWithValue("@jobtitle", job_title_id);
+                    addEmpl.ExecuteNonQuery();
                 }
                 catch(Exception ex)
                 {
@@ -64,6 +75,11 @@ namespace DBProject
                 }
                 
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
