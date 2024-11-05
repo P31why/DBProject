@@ -72,7 +72,7 @@ namespace DBProject
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
-            JodTitleWin win = new JodTitleWin();
+            JodTitleWin win = new JodTitleWin(connectionString);
             win.Show();
         }
         private void ViewEmployeesBase(bool withID)
