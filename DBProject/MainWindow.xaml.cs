@@ -53,7 +53,7 @@ namespace DBProject
                     await connetion.OpenAsync();
                     statusBar.Content = "Подключение установлено";
                 }
-                catch (Exception ex)
+                catch
                 {
                     statusBar.Content = "Подключение отсутствует";
                 }
@@ -110,6 +110,16 @@ namespace DBProject
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
             ViewDatabase(false);
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
