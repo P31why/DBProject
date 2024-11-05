@@ -18,7 +18,7 @@ namespace DBProject
     public partial class MainWindow : Window
     {
         event SettingsUpdate SendCurrrentConnection;
-        string connectionString = "Server=DESKTOP-CND4IL3;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
+        string connectionString = "Server=Lapetope;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
         public MainWindow()
         {
             InitializeComponent();
@@ -63,6 +63,16 @@ namespace DBProject
         {
             statusBar.Content = "Подключение ...";
             TestConnection();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
