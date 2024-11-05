@@ -26,7 +26,6 @@ namespace DBProject
         public SettingsWindow()
         {
             InitializeComponent();
-            
         }
         public void AcceptConnection(string text)
         {
