@@ -21,7 +21,11 @@
             <MenuItem Header="Настройки" Click="MenuItem_Click" ></MenuItem>
             <MenuItem Header="Добавление">
                 <MenuItem Header="Работника" Click="MenuItem_Click_2" />
-                <MenuItem Header="Должность" Click="MenuItem_Click_3" />
+                <MenuItem Header="Должности" Click="MenuItem_Click_3" />
+            </MenuItem>
+            <MenuItem Header="Удаление">
+                <MenuItem Header="Работника" Click="MenuItem_Click_2" />
+                <MenuItem Header="Должности" Click="MenuItem_Click_3" />
             </MenuItem>
         </Menu>
         <Label x:Name="statusBar" Content="Label" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.632,0.579"/>
