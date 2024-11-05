@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace DBProject
 {
@@ -18,7 +19,7 @@ namespace DBProject
     public partial class MainWindow : Window
     {
         event SettingsUpdate SendCurrrentConnection;
-        string connectionString = "Server=Lapetope;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
+        string connectionString = "Server=Lapetope;Database=UsersBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
         public MainWindow()
         {
             InitializeComponent();
@@ -67,12 +68,48 @@ namespace DBProject
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-
+            EmplAdd win = new EmplAdd();
+            win.Show();
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
+            JodTitleWin win = new JodTitleWin();
+            win.Show();
+        }
+        private void ViewDatabase(bool withID)
+        {
+            string sqlSelectEmpl;
+            if (!withID)
+                sqlSelectEmpl = "EXEC ViewEmploeysID";
+            else 
+                sqlSelectEmpl = "EXEC ViewEmploeys";
 
+            using (SqlConnection connect = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(sqlSelectEmpl, connect);
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    DataGrid.ItemsSource=ds.Tables[0].DefaultView;
+                }
+                catch
+                {
+                    statusBar.Content = "Неудалось выполнить команду";
+                }
+                
+            }
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            ViewDatabase(true);
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            ViewDatabase(false);
         }
     }
 }
