@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,36 @@ namespace DBProject
     /// </summary>
     public partial class JodTitleWin : Window
     {
-        public JodTitleWin()
+        string connectionStr;
+        public JodTitleWin(string connectionStr)
         {
+            this.connectionStr = connectionStr;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void AddNewJobTitle_Click(object sender, RoutedEventArgs e)
+        {
+            string sqlquery = "AddNewJobTitle";
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(sqlquery,connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("jobname", TitleText.Text);
+                    command.ExecuteNonQuery();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
