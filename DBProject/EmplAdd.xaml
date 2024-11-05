@@ -10,14 +10,14 @@
 
         <StackPanel Margin="48,10,48,96">
             <Label Content="Добавление нового сотрудника" Margin="50,0,0,0"/>
-            <Label Content="Фамилия " HorizontalAlignment="Left" Margin="26,72,45,0" VerticalAlignment="Top"/>
+            <Label Content="Фамилия " HorizontalAlignment="Left" Margin="26,20,45,0" VerticalAlignment="Top"/>
             <TextBox TextWrapping="Wrap" Text="" Width="224"/>
             <Label Content="Имя" Margin="26,10,0,0"/>
             <TextBox TextWrapping="Wrap" Text="" Width="224"/>
             <Label Content="Должность" Margin="26,10,0,0"/>
             <TextBox TextWrapping="Wrap" Text="" Width="224"/>
-            <Button Content="Добавить" Width="148" Height="24" Margin="0,10,0,0"/>
-            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,10,0,0"/>
+            <Button Content="Добавить" Width="148" Height="24" Margin="0,35,0,0"/>
+            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,15,0,0"/>
         </StackPanel>
 
     </Grid>
