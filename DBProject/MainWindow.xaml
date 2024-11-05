@@ -9,26 +9,32 @@
         Loaded="Window_Loaded">
     <Grid>
         <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Операции">
+                <MenuItem Header="Добавление">
+                    <MenuItem Header="Работника" Click="MenuItem_Click_2" />
+                    <MenuItem Header="Должности" Click="MenuItem_Click_3" />
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Удаление">
+                    <MenuItem Header="Работника" Click="MenuItem_Click_2" />
+                    <MenuItem Header="Должности" Click="MenuItem_Click_3" />
+                </MenuItem>
+            </MenuItem>
             <MenuItem Header="Таблицы">
                 <MenuItem Header="Работники" ></MenuItem>
                 <MenuItem Header="Должноти" ></MenuItem>
                 <Separator />
             </MenuItem>
             <MenuItem Header="Отображение">
-                <MenuItem Header="Показать ID"/>
+                <MenuItem Header="Отобразить работников" Click="MenuItem_Click_4"/>
+                <MenuItem Header="Отобразить работников с ID" Click="MenuItem_Click_5"/>
             </MenuItem>
             <MenuItem Header="Подключиться" Click="MenuItem_Click_1" ></MenuItem>
             <MenuItem Header="Настройки" Click="MenuItem_Click" ></MenuItem>
-            <MenuItem Header="Добавление">
-                <MenuItem Header="Работника" Click="MenuItem_Click_2" />
-                <MenuItem Header="Должности" Click="MenuItem_Click_3" />
-            </MenuItem>
-            <MenuItem Header="Удаление">
-                <MenuItem Header="Работника" Click="MenuItem_Click_2" />
-                <MenuItem Header="Должности" Click="MenuItem_Click_3" />
-            </MenuItem>
+            
+            
         </Menu>
         <Label x:Name="statusBar" Content="Label" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.632,0.579"/>
-        <DataGrid x:Name="DataGrid" Margin="10,25,10,24"/>
+        <DataGrid x:Name="DataGrid"  Margin="10,25,10,24"/>
     </Grid>
 </Window>
