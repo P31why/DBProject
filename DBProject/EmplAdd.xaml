@@ -9,5 +9,15 @@
     <Grid>
         <Button Content="Добавить" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Height="32" Width="158"/>
 
+        <StackPanel Margin="48,10,48,96">
+            <Label Content="Добавление нового сотрудника" Margin="50,0,0,0"/>
+            <Label Content="Фамилия " HorizontalAlignment="Left" Margin="26,72,45,0" VerticalAlignment="Top"/>
+            <TextBox TextWrapping="Wrap" Text="" Width="224"/>
+            <Label Content="Имя" Margin="26,10,0,0"/>
+            <TextBox TextWrapping="Wrap" Text="" Width="224"/>
+            <Label Content="Должность" Margin="26,10,0,0"/>
+            <TextBox TextWrapping="Wrap" Text="" Width="224"/>
+        </StackPanel>
+
     </Grid>
 </Window>
