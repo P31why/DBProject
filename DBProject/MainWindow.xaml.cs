@@ -8,7 +8,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Data;
 
 namespace DBProject
@@ -77,13 +76,13 @@ namespace DBProject
             JodTitleWin win = new JodTitleWin();
             win.Show();
         }
-        private void ViewDatabase(bool withID)
+        private void ViewEmployeesBase(bool withID)
         {
             string sqlSelectEmpl;
-            if (!withID)
-                sqlSelectEmpl = "EXEC ViewEmploeysID";
-            else 
+            if (withID)
                 sqlSelectEmpl = "EXEC ViewEmploeys";
+            else 
+                sqlSelectEmpl = "EXEC ViewEmploeysID";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {
@@ -102,14 +101,19 @@ namespace DBProject
             }
         }
 
+        private void ViewJobTitlesBase(bool withID)
+        {
+
+        }
+
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
-            ViewDatabase(true);
+            ViewEmployeesBase(true);
         }
 
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
-            ViewDatabase(false);
+            ViewEmployeesBase(false);
         }
 
         private void MenuItem_Click_6(object sender, RoutedEventArgs e)
