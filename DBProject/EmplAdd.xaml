@@ -15,9 +15,9 @@
             <Label Content="Имя" Margin="26,10,0,0"/>
             <TextBox x:Name="NameText" TextWrapping="Wrap" Text="" Width="224"/>
             <Label Content="Должность" Margin="26,10,0,0"/>
-            <ComboBox x:Name="jobList" Width="226"/>
-            <Button Content="Добавить" Width="148" Height="24" Margin="0,35,0,0" Click="AddNewEmployee"/>
-            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,15,0,0"/>
+            <ComboBox x:Name="jobList" Width="226" DisplayMemberPath="jobName" SelectedValuePath="jobID" />
+            <Button Content="Добавить" Width="148" Height="24" Margin="0,35,0,0" Click="AddNewEmployee_Click"/>
+            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,15,0,0" Click="Button_Click"/>
 
         </StackPanel>
 
