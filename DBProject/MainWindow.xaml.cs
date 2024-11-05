@@ -78,17 +78,17 @@ namespace DBProject
         }
         private void ViewEmployeesBase(bool withID)
         {
-            string sqlSelectEmpl;
+            string sqlQueryEmpl;
             if (withID)
-                sqlSelectEmpl = "EXEC ViewEmploeys";
+                sqlQueryEmpl = "EXEC ViewEmploeys";
             else 
-                sqlSelectEmpl = "EXEC ViewEmploeysID";
+                sqlQueryEmpl = "EXEC ViewEmploeysID";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {
                 try
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter(sqlSelectEmpl, connect);
+                    SqlDataAdapter adapter = new SqlDataAdapter(sqlQueryEmpl, connect);
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     DataGrid.ItemsSource=ds.Tables[0].DefaultView;
@@ -103,7 +103,18 @@ namespace DBProject
 
         private void ViewJobTitlesBase(bool withID)
         {
-
+            string sqlQueryJobTitles;
+            if (withID)
+                sqlQueryJobTitles = "EXEC ViewJobTitlesID";
+            else
+                sqlQueryJobTitles = "EXEC ViewJobTitles";
+            using(SqlConnection connection=new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlQueryJobTitles,connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                DataGrid.ItemsSource = ds.Tables[0].DefaultView;
+            }
         }
 
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
@@ -118,12 +129,12 @@ namespace DBProject
 
         private void MenuItem_Click_6(object sender, RoutedEventArgs e)
         {
-
+            ViewJobTitlesBase(false);
         }
 
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
-
+            ViewJobTitlesBase(true);
         }
     }
 }
