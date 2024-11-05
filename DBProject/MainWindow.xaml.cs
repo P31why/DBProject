@@ -22,7 +22,6 @@ namespace DBProject
         public MainWindow()
         {
             InitializeComponent();
-            
         }
         public void UpdateConnection(string text)
         {
@@ -67,7 +66,7 @@ namespace DBProject
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            EmplAdd win = new EmplAdd();
+            EmplAdd win = new EmplAdd(connectionString);
             win.Show();
         }
 
