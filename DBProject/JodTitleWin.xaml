@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="JodTitleWin" Height="450" Width="352">
     <Grid>
-        <Button Content="Добавить" HorizontalAlignment="Center" Margin="0,365,0,0" VerticalAlignment="Top" Height="27" Width="116"/>
+        <StackPanel Margin="48,53,48,53">
+            <Label Content="Добавление новой должности" Margin="50,0,0,0"/>
+            <Label Content="Название" HorizontalAlignment="Left" Margin="13,20,45,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TitleText" TextWrapping="Wrap" Text="" Width="224"/>
+            <Button Content="Добавить" Width="148" Height="24" Margin="0,35,0,0" Click="AddNewJobTitle_Click"/>
+            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,15,0,0" Click="Button_Click"/>
 
+        </StackPanel>
     </Grid>
 </Window>
