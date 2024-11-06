@@ -1,0 +1,24 @@
+﻿<Window x:Class="DBProject.DeleteEmplWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBProject"
+        mc:Ignorable="d"
+        Title="DeleteEmplWindow" Height="450" Width="350">
+    <Grid>
+        <StackPanel Margin="32,10,32,-42">
+            <Label Content="Удаление сотрудника" Margin="75,0,0,0"/>
+            <Label Content="Фамилия " HorizontalAlignment="Left" Margin="26,20,45,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="FamText" TextWrapping="Wrap" Text="" Width="224"/>
+            <Label Content="Имя" Margin="26,10,0,0"/>
+            <TextBox x:Name="NameText" TextWrapping="Wrap" Text="" Width="224"/>
+            <Label Content="Должность" Margin="26,10,0,0"/>
+            <ComboBox x:Name="jobList" Width="226" DisplayMemberPath="jobName" SelectedValuePath="jobID" />
+            <Button Content="Удалить" Width="148" Height="24" Margin="0,35,0,0" Click="DeleteNewEmployee_Click"/>
+            <Button Content="Закрыть окно" Width="148" Height="24" Margin="0,15,0,0" Click="Button_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
