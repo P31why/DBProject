@@ -12,6 +12,7 @@
             <MenuItem Header="Таблицы">
                 <MenuItem Header="Работники" >
                     <MenuItem Header="Отобразить работников" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="Отобразить с сортировкой" Click="ViewWithParametr_Click_8"/>
                     <MenuItem Header="Отобразить работников с ID" Click="MenuItem_Click_5"/>
                 </MenuItem>
                 <Separator />
@@ -19,6 +20,7 @@
                     <MenuItem Header="Отобразить Должности" Click="MenuItem_Click_6"/>
                     <MenuItem Header="Отобразить Должности с ID" Click="MenuItem_Click_7"/>
                 </MenuItem>
+                <MenuItem Header="Сохранить текущую таблицу" Click="SaveDatabase_Click_8"/>
             </MenuItem>
             <MenuItem Header="Редактировать">
                 <MenuItem Header="Добавление">
