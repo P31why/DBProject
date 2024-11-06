@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:DBProject"
         mc:Ignorable="d"
         Title="ChangeEmployeWindow" Height="450" Width="359">
-    <Grid>
-        
-    </Grid>
+    <Grid/>
 </Window>

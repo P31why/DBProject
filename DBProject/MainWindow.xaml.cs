@@ -176,14 +176,24 @@ namespace DBProject
         }
         public void ViewTableWithParam(int value)
         {
-            string query = $"EXEC ViewEmplWithParam {value}";
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(query,connection);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                DataGrid.ItemsSource = ds.Tables[0].DefaultView;
+                string query = $"EXEC ViewEmplWithParam {value}";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    DataGrid.ItemsSource = ds.Tables[0].DefaultView;
+                    statusBar.Content = $"Отсартироввано с значением {value}";
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
