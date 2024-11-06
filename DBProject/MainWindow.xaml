@@ -27,8 +27,8 @@
                 </MenuItem>
                 <Separator/>
                 <MenuItem Header="Удаление">
-                    <MenuItem Header="Работника" Click="MenuItem_Click_2" />
-                    <MenuItem Header="Должности" Click="MenuItem_Click_3" />
+                    <MenuItem Header="Работника" Click="DeleteEmployee_Click_8" />
+                    <MenuItem Header="Должности" Click="DeleteJobTitle_Click_9" />
                 </MenuItem>
             </MenuItem>
             
