@@ -30,6 +30,11 @@
                     <MenuItem Header="Работника" Click="DeleteEmployee_Click_8" />
                     <MenuItem Header="Должности" Click="DeleteJobTitle_Click_9" />
                 </MenuItem>
+                <Separator/>
+                <MenuItem Header="Изменение">
+                    <MenuItem Header="Работника" Click="ChangeEmploye_Click_10" />
+                    <MenuItem Header="Должности" Click="ChangeJobTitle_Click_11" />
+                </MenuItem>
             </MenuItem>
             
             <MenuItem Header="Подключиться" Click="MenuItem_Click_1" ></MenuItem>

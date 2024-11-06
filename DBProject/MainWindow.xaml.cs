@@ -147,5 +147,15 @@ namespace DBProject
             DeleteJobTitleWindow win = new DeleteJobTitleWindow(connectionString);
             win.Show();
         }
+
+        private void ChangeEmploye_Click_10(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeJobTitle_Click_11(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
