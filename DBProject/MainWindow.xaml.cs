@@ -18,7 +18,7 @@ namespace DBProject
     public partial class MainWindow : Window
     {
         event SettingsUpdate SendCurrrentConnection;
-        string connectionString = "Server=DESKTOP-CND4IL3;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
+        string connectionString = "Server=Lapetope;Database=UsersBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
         public MainWindow()
         {
             InitializeComponent();
@@ -116,6 +116,11 @@ namespace DBProject
             }
         }
 
+        private void ViewWithparametr()
+        {
+            
+        }
+
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
             ViewEmployeesBase(true);
@@ -147,7 +152,7 @@ namespace DBProject
             DeleteJobTitleWindow win = new DeleteJobTitleWindow(connectionString);
             win.Show();
         }
-
+        /*---*/
         private void ChangeEmploye_Click_10(object sender, RoutedEventArgs e)
         {
 
@@ -156,6 +161,29 @@ namespace DBProject
         private void ChangeJobTitle_Click_11(object sender, RoutedEventArgs e)
         {
 
+        }
+        /*---*/
+        private void SaveDatabase_Click_8(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /*---*/
+        private void ViewWithParametr_Click_8(object sender, RoutedEventArgs e)
+        {
+            ChooseParametrWindow win = new ChooseParametrWindow(connectionString);
+            win.SendJobTitle += ViewTableWithParam;
+            win.Show();
+        }
+        public void ViewTableWithParam(int value)
+        {
+            string query = $"EXEC ViewEmplWithParam {value}";
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query,connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                DataGrid.ItemsSource = ds.Tables[0].DefaultView;
+            }
         }
     }
 }
