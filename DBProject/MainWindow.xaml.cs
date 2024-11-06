@@ -18,7 +18,7 @@ namespace DBProject
     public partial class MainWindow : Window
     {
         event SettingsUpdate SendCurrrentConnection;
-        string connectionString = "Server=Lapetope;Database=UsersBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
+        string connectionString = "Server=DESKTOP-CND4IL3;Database=TestBase;Trusted_Connection=True;TrustServerCertificate=True;"; 
         public MainWindow()
         {
             InitializeComponent();
@@ -134,6 +134,18 @@ namespace DBProject
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
             ViewJobTitlesBase(true);
+        }
+
+        private void DeleteEmployee_Click_8(object sender, RoutedEventArgs e)
+        {
+            DeleteEmplWindow win = new DeleteEmplWindow(connectionString);
+            win.Show();
+        }
+
+        private void DeleteJobTitle_Click_9(object sender, RoutedEventArgs e)
+        {
+            DeleteJobTitleWindow win = new DeleteJobTitleWindow(connectionString);
+            win.Show();
         }
     }
 }
