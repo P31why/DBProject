@@ -1,0 +1,18 @@
+﻿<Window x:Class="DBProject.ChooseParametrWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBProject"
+        mc:Ignorable="d"
+        Title="ChooseParametrWindow" Height="266" Width="373">
+    <Grid>
+        <StackPanel Margin="48,53,69,31">
+            <Label Content="Выберите должность" HorizontalAlignment="Left" Margin="13,20,45,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="jobList" Width="226" DisplayMemberPath="jobName" SelectedValuePath="jobID" />
+            <Button Content="Сортировать" Width="148" Height="24" Margin="0,35,0,0" Click="ChooseJobTitle_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
