@@ -79,9 +79,9 @@ namespace DBProject
         {
             string sqlQueryEmpl;
             if (withID)
-                sqlQueryEmpl = "EXEC ViewEmploeys";
+                sqlQueryEmpl = "select * from ViewEmploeys";
             else 
-                sqlQueryEmpl = "EXEC ViewEmploeysID";
+                sqlQueryEmpl = "select * from ViewEmploeysID";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {
@@ -104,9 +104,9 @@ namespace DBProject
         {
             string sqlQueryJobTitles;
             if (withID)
-                sqlQueryJobTitles = "EXEC ViewJobTitlesID";
+                sqlQueryJobTitles = "select * from ViewJobTitlesID";
             else
-                sqlQueryJobTitles = "EXEC ViewJobTitles";
+                sqlQueryJobTitles = "select * from ViewJobTitles";
             using(SqlConnection connection=new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlQueryJobTitles,connection);

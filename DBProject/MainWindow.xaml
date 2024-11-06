@@ -20,7 +20,7 @@
                     <MenuItem Header="Отобразить Должности с ID" Click="MenuItem_Click_7"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Изменить">
+            <MenuItem Header="Редактировать">
                 <MenuItem Header="Добавление">
                     <MenuItem Header="Работника" Click="MenuItem_Click_2" />
                     <MenuItem Header="Должности" Click="MenuItem_Click_3" />
